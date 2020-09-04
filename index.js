@@ -8,7 +8,7 @@ const database = require("./models");
 app.use(bodyParser.json());
 app.use("/book", bookRouter);
 
-database.sequelize.sync({ force: true }).then(() => {
+database.sequelize.sync().then(() => {
   console.log("Drop and re-sync db.");
 });
 
