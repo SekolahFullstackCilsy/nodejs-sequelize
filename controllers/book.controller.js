@@ -73,3 +73,17 @@ exports.delete = async (req, res) => {
     });
   }
 };
+
+exports.findById = async (req, res) => {
+  try {
+    const params = req.params;
+    const id = params.id;
+
+    const book = await Book.findByPk(id);
+    res.send(book);
+  } catch (error) {
+    res.status(500).send({
+      message: "Error ketika menampilkan buku by id",
+    });
+  }
+};

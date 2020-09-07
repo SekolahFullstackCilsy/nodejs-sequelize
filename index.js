@@ -24,4 +24,6 @@ database.sequelize.sync().then(() => {
   console.log("Drop and re-sync db.");
 });
 
-app.listen(4000);
+app.listen(4000, () => {
+  console.log("server running on port 4000");
+});
